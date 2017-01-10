@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-one center">
+  <div class="loading-two center">
     <img src="../../../static/zhihu-icon2.png" height="50" class="inline-block double-flash" alt="">
     <p class="h6">正在加载...</p>
   </div>
@@ -8,7 +8,7 @@
 <script>
 
   export default {
-    name: 'LoadingOne',
+    name: 'LoadingTwo',
     components: {
 
     }
@@ -16,11 +16,12 @@
 </script>
 
 <style scoped>
-.loading-one{
+.loading-two{
   width: 100%;
   padding-bottom: 3rem;
+  margin-top: 5rem;
 }
-.loading-one p {
+.loading-two p {
   
 }
 .double-flash {

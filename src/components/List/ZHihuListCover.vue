@@ -24,6 +24,6 @@
 
 <style>
 .zhihu-list-cover {
-  box-shadow:0px 0px 20px #dbdada;
+  box-shadow: 0px 5px 30px #efefef;
 }
 </style>
