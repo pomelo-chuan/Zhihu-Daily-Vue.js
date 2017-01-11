@@ -2,7 +2,7 @@
     <div class="zhihu-head">
         <div class="fixed top-0 left-0 right-0 pt1 pl0 pb1">
             <router-link to="/" class="inline-block h5  text-decoration-none ml3">
-                <img :src="ZhihuIcon" height="18" class="fixed"> 知乎日报
+                <img src="../../static/zhihu-icon.png" height="18" class="fixed"> 知乎日报
             </router-link>
             <ul class="zhihu-head list-reset inline-block right">
                 <li class="inline-block mr1 h6">

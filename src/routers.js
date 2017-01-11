@@ -29,8 +29,9 @@ const routers = [{
 }]
 
 export const router = new VueRouter({
-    mode: 'history',
+    // mode: 'history',
     routes: routers,
+    hashbang: true,
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition
