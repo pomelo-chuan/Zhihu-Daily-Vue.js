@@ -39,9 +39,13 @@
 </script>
 
 <style>
+.zhihu-head {
+    
+}
 .zhihu-head div:nth-child(1){
       border-bottom: 1px solid #f3f3f3;
       background-color: white;
+      z-index: 999;
 }
 .zhihu-head div img {
     left: 0.5rem;

@@ -24,6 +24,6 @@
 
 <style>
 .zhihu-list-cover {
-  box-shadow: 0px 5px 30px #efefef;
+  box-shadow: 0px 5px 20px #efefef;
 }
 </style>

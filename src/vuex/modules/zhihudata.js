@@ -50,6 +50,7 @@ const mutations = {
             return this.replace(new RegExp(s1, "gm"), s2);
         }
         all.body = all.body.replaceAll('src=\"', 'src=\"http://lovestreet.leanapp.cn/zhihu/resource?url= ')
+        all.body = all.body.replaceAll('<div class=\"img-place-holder\"></div>', '')
         state.NewsDetail = all
         state.LoadingTwo = false
     },
@@ -59,10 +60,12 @@ const mutations = {
     },
     [types.TOGGLE_THEMES_LIST](state, all) {
         state.ThemesList = all
+        state.LoadingTwo = false
     }
 }
 
 const actions = {
+    // 获取首页消息列表
     [types.FECTH_NEWS_LATEST]({commit}) {
         state.LoadingTwo = true
         axios.get('http://lovestreet.leanapp.cn/zhihu/news/latest')
@@ -70,6 +73,7 @@ const actions = {
                 commit(types.TOGGLE_NEWS_LATEST, res.data, console.log('news lastets:', res.data))
             }).catch(err => console.log(err))
     },
+    // 首页下方按钮点击加载更多消息
     [types.FECTH_NEWS_LATEST_MORE]({commit}) {
         state.LoadingOne = true
         var now = state.time.format("YYYYMMDD")
@@ -79,6 +83,7 @@ const actions = {
                 commit(types.TOGGLE_NEWS_LATEST_MORE, res.data, console.log('TOGGLE_NEWS_LATEST_MORE:', res.data))
             }).catch(err => console.log(err))
     },
+    // 获取信息详情
     [types.FETCH_NEWS_DETAIL]({commit}, id) {
         state.LoadingTwo = true
         axios.get('http://lovestreet.leanapp.cn/zhihu/news/' + id)
@@ -86,6 +91,7 @@ const actions = {
                 commit(types.TOGGLE_NEWS_DETAIL, res.data)
             }).catch(err => console.log(err))
     },
+    // 获取日报主题
     [types.FETCH_THEMES]({commit}) {
         state.LoadingTwo = true
         axios.get('http://lovestreet.leanapp.cn/zhihu/themes')
@@ -93,7 +99,9 @@ const actions = {
                 commit(types.TOGGLE_THEMES, res.data)
             }).catch(err => console.log(err))
     },
+    // 获取主题条目列表
     [types.FETCH_THEMES_list]({commit}, id) {
+        state.LoadingTwo = true
         axios.get('http://lovestreet.leanapp.cn/zhihu/themes/' + id)
             .then(res => {
                 commit(types.TOGGLE_THEMES_LIST, res.data)
