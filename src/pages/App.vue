@@ -28,6 +28,7 @@
         computed: {
             ...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO'])
         },
+        
         created: function () {
             if (!!this.DONE_NEWS_LATEST.stories && this.DONE_NEWS_LATEST.stories.length > 0){
             } else {

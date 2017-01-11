@@ -26,6 +26,7 @@
   import ThemeLink from '../components/Theme/ThemeLink'
   import ThemeHead from '../components/Theme/ThemeHead'
   import LoadingTwo from '../components/common/LoadingTwo'
+  
   export default {
     name: 'ThemeList',
     components: {
