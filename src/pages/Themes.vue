@@ -6,7 +6,7 @@
         <router-link :to="{name: 'themes-list', params: {id: item.id}}">
         <div class="clearfix themes-list mt1">
           <div class="col col-2 center">
-            <img class="rounded mb1" :src="'http://lovestreet.leanapp.cn/zhihu/resource?url=' + item.thumbnail" width="40" alt="">
+            <img class="mb1" :src="'http://lovestreet.leanapp.cn/zhihu/resource?url=' + item.thumbnail" width="40" style="border-radius: 40px" alt="">
           </div>
           <div class="col col-10">
             <p class="h6" style="color: black">{{item.name}}</p>

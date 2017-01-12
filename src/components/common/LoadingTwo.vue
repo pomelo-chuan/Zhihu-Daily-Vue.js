@@ -17,9 +17,11 @@
 
 <style scoped>
 .loading-two{
+  position: fixed;
   width: 100%;
-  padding-bottom: 3rem;
-  margin-top: 5rem;
+  height: 100vh;
+  background-color: white;
+  padding-top: 25%;
 }
 .loading-two p {
   

@@ -16,6 +16,7 @@
 
 <style>
 .theme-link{
-    box-shadow: 0px 5px 30px #efefef;
+    /*box-shadow: 0px 5px 30px #efefef;*/
+    border-bottom: 1px solid #efefef;
 }
 </style>
