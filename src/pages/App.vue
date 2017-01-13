@@ -6,22 +6,13 @@
 <ZHihuListCover :title="item.title" :images="item.images[0]"></ZHihuListCover>
 </router-link>
 </div>
-<button v-show="!DONE_LOADING_ONE && !DONE_LOADING_TWO" @click="LoadMoreNews()" class="load-more-button pl2 pr2 pt1 pb1 mb2 mt1 rounded">More</button>
+<button v-show="!DONE_LOADING_ONE && !DONE_LOADING_TWO" @click="LoadMoreNews()" class="load-more-button pl2 pr2 pt1 pb1 mb2 mt1">更多</button>
 <LoadingOne v-show="DONE_LOADING_ONE"></LoadingOne>
-<button @click="backToTop" class="back-to--button pl2 pr2 pt1 pb1 mb2 mt1 rounded" id="scrollto">Top</button>
-<!--<BackToTop v-show="BackToTopIsShow"></BackToTop>-->
 </div>
 </template>
 
 <script>
-    window.onscroll = function () {
-        if (document.documentElement.scrollTop + document.body.scrollTop > 1000) {
-            document.getElementById("scrollto").style.display = "block";
-        }
-        else {
-            document.getElementById("scrollto").style.display = "none";
-        }
-    }
+
     import {
         mapGetters
     } from 'vuex'
@@ -62,10 +53,6 @@
                     //document.getElementById("scrollto").style.display = "none";
                     console.log(2)
                 }
-            },
-            backToTop: function () {
-                window.scrollTo(0, 0)
-                
             }
         }
 
@@ -73,6 +60,7 @@
 </script>
 
 <style>
+/* ===the style of load more button=== */
 .load-more-button{
     /* ===style format=== */
     border-top-style: none;
@@ -81,14 +69,16 @@
     border-left-style: none;
     outline: none;
     /* ===color=== */
-    background-color: #00B4FF;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 0.8rem;
-    box-shadow:0px 0px 20px #dbdada;
+    border-bottom: 1px solid #efefef;
+    /*box-shadow:0px 0px 20px #dbdada;*/
     /* ===size and position=== */
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     }
+
+/* ===the style of back to top=== */
 .back-to--button{
     /* ===style format=== */
     border-top-style: none;
@@ -97,17 +87,14 @@
     border-left-style: none;
     outline: none;
     /* ===color=== */
-    /*background-color: grey;*/
     color: white;
     font-size: 0.8rem;
-    /*box-shadow:0px 0px 20px grey;*/
     opacity: 0.7;
     /* ===size and position=== */
     position: fixed; 
     right: 1rem; 
     bottom: 0rem; 
     display: none;
-
 }
 
 </style>

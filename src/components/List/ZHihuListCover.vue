@@ -1,11 +1,11 @@
 <template>
-  <div class="zhihu-list-cover m1 rounded">
+  <div class="zhihu-list-cover m1">
     <div class="clearfix">
       <div class="col col-3 center">
-        <img :src="'http://lovestreet.leanapp.cn/zhihu/resource?url='+images" width="60" class="rounded" alt="">
+        <img :src="'http://lovestreet.leanapp.cn/zhihu/resource?url='+images" width="60" class="rounded m1" alt="" style="">
       </div>
       <div class="col col-9">
-        <p class="h6 ">{{title}}</p>
+        <p class="h6">{{title}}</p>
       </div>
     </div>
     <p class="h6 m1"></p>
