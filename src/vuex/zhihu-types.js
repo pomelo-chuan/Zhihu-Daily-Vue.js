@@ -15,6 +15,7 @@ export const TOGGLE_THEMES_LIST = 'TOGGLE_THEMES_LIST'              // 日报主
 //  getters types
 export const DONE_LOADING_ONE = 'DONE_LOADING_ONE'                  // loading one
 export const DONE_LOADING_TWO = 'DONE_LOADING_TWO'                  // loading two
+export const DONE_NEWS_LIST_ROOT = 'DONE_NEWS_LIST_ROOT'            // 最新消息列表梗
 export const DONE_NEWS_LATEST = 'DONE_NEWS_LATEST'                  // 最新消息列表
 export const DONE_NEWS_LATEST_MORE = 'DONE_NEWS_LATEST_MORE'        // 更多消息
 export const DONE_NEWS_DETAIL = 'DONE_NEWS_DETAIL'                  // 详细信息

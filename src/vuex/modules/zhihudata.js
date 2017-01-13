@@ -3,6 +3,7 @@ import axios from 'axios'
 var moment = require('moment');
 
 const state = {
+    NewsListRoot: [],
     NewsLatest: {},
     time: moment(),
     LoadingOne: false,
@@ -13,6 +14,9 @@ const state = {
 }
 
 const getters = {
+    [types.DONE_NEWS_LIST_ROOT]: state => {
+        return state.NewsListRoot
+    },
     [types.DONE_NEWS_LATEST]: state => {
         return state.NewsLatest
     },
@@ -35,13 +39,11 @@ const getters = {
 
 const mutations = {
     [types.TOGGLE_NEWS_LATEST](state, all) {
-        state.NewsLatest = all
+        state.NewsListRoot.push(all)
         state.LoadingTwo = false
     },
     [types.TOGGLE_NEWS_LATEST_MORE](state, all) {
-        all.stories.map(function (item) {
-            return state.NewsLatest.stories.push(item)
-        })
+        state.NewsListRoot.push(all)
         state.time.subtract(1, "days")
         state.LoadingOne = false
     },
@@ -70,17 +72,16 @@ const actions = {
         state.LoadingTwo = true
         axios.get('http://lovestreet.leanapp.cn/zhihu/news/latest')
             .then(res => {
-                commit(types.TOGGLE_NEWS_LATEST, res.data, console.log('news lastets:', res.data))
+                commit(types.TOGGLE_NEWS_LATEST, res.data)
             }).catch(err => console.log(err))
     },
     // 首页下方按钮点击加载更多消息
     [types.FECTH_NEWS_LATEST_MORE]({commit}) {
         state.LoadingOne = true
         var now = state.time.format("YYYYMMDD")
-        console.log("日期：", now)
         axios.get('http://lovestreet.leanapp.cn/zhihu/before/' + now)
             .then(res => {
-                commit(types.TOGGLE_NEWS_LATEST_MORE, res.data, console.log('TOGGLE_NEWS_LATEST_MORE:', res.data))
+                commit(types.TOGGLE_NEWS_LATEST_MORE, res.data)
             }).catch(err => console.log(err))
     },
     // 获取信息详情

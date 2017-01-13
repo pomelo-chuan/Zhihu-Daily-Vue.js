@@ -20,8 +20,7 @@
   width: 100%;
   padding-bottom: 3rem;
 }
-.loading-one p {
-  
+.loading-one img {
 }
 .double-flash {
   animation: double-flash_5308 3s ease infinite;
