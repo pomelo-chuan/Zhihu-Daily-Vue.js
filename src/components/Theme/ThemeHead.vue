@@ -1,6 +1,6 @@
 <template>
     <div class="theme-head">
-        <img :src="'http://lovestreet.leanapp.cn/zhihu/resource?url=' + image" style="width: 100vw" alt="">
+        <img :src="'http://lovestreet.leanapp.cn/zhihu/resource?url=' + image" style="width: 100%" alt="">
         <div class="theme-head-name ml2">
             <p class="pl1 pt1 h5 bold">{{name}}:</p>
             <p class="pt1 pb1 pl2 pr1 h6">{{description}}</p>

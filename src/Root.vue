@@ -1,7 +1,10 @@
 <template>
   <div>
     <ZhihuHead></ZhihuHead>
-    <router-view></router-view>
+    <div class="root-style">
+      <router-view></router-view>
+    </div>
+
   </div>
 </template>
 
@@ -25,4 +28,15 @@
 html {
   font-size: 20px;
 }
+@media screen and (min-width: 640px) {
+  html {
+  font-size: 25px;
+}
+.root-style {
+  width: 640px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+}
+
 </style>
