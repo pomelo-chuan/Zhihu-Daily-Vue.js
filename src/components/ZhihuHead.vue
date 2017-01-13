@@ -1,7 +1,7 @@
 <template>
     <div class="zhihu-head">
         <div class="fixed top-0 left-0 right-0 pt1 pl0 pb1">
-            <router-link to="/" class="inline-block h5  text-decoration-none ml3">
+            <router-link to="/" class="inline-block h5 text-decoration-none ml3" style="font-weight: 500;">
                 <img src="../../static/zhihu-icon.png" height="18" class="fixed"> 知乎日报
             </router-link>
             <ul class="zhihu-head list-reset inline-block right">
@@ -9,13 +9,11 @@
                     <router-link to="/themes"  style="color: black;text-decoration: none">专题日报</router-link>
                 </li>
                 <li class="inline-block mr1 h6">
-                    <router-link to="/description" class="text-decoration-none">关于</router-link>
+                    <router-link to="/description">关于</router-link>
                 </li>
             </ul>
         </div>
         <div style="height: 2.5rem"></div>
-
-    
 </div>
 </div>
 </template>
@@ -57,5 +55,7 @@
 .zhihu-head li a{
     color: black;
 }
-
+.router-link-active{
+    font-weight: 800;
+}
 </style>
