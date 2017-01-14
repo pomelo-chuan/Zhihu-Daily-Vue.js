@@ -1,16 +1,19 @@
 <template>
-    <div class="ml2 mt1 mr2">
+    <div>
         <LoadingTwo v-show="DONE_LOADING_TWO"></LoadingTwo>
-        <div v-for="list in DONE_NEWS_LIST_ROOT">
-            <p class="news-lastet-time m2 bold">{{list.date | formatDate}}</p>
-            <div v-for="item in list.stories">
-                <router-link :to="{name: 'news-detail', params: {id: item.id}}" style="color: black">
+        <div class="ml2 mt1 mr2">
+            <!--<TopStory :newsLatest="DONE_NEWS_LATEST"></TopStory>-->
+            <div v-for="list in DONE_NEWS_LIST_ROOT">
+                <p class="news-lastet-time m2 bold">{{list.date | formatDate}}</p>
+                <div v-for="item in list.stories">
+                    <router-link :to="{name: 'news-detail', params: {id: item.id}}" style="color: black">
 <ZHihuListCover :title="item.title" :images="item.images[0]"></ZHihuListCover>
 </router-link>
 </div>
 </div>
 <button v-show="!DONE_LOADING_ONE && !DONE_LOADING_TWO" @click="LoadMoreNews()" class="load-more-button pl2 pr2 pt1 pb1 mb2 mt1">更多</button>
 <LoadingOne v-show="DONE_LOADING_ONE"></LoadingOne>
+</div>
 </div>
 </template>
 
@@ -20,6 +23,8 @@
     import LoadingOne from '../components/common/LoadingOne'
     import LoadingTwo from '../components/common/LoadingTwo'
     import BackToTop from '../components/common/BackToTop'
+    import TopStory from '../components/common/TopStory'
+
 
     export default {
         name: 'App',
@@ -27,8 +32,8 @@
             ZHihuListCover,
             LoadingOne,
             LoadingTwo,
-            BackToTop
-
+            BackToTop,
+            TopStory
         },
         computed: {
             ...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO', 'DONE_NEWS_LIST_ROOT'])
@@ -43,17 +48,6 @@
         methods: {
             LoadMoreNews: function () {
                 this.$store.dispatch('FECTH_NEWS_LATEST_MORE')
-            },
-            backTop: function () {
-                if (document.documentElement.scrollTop + document.body.scrollTop > 100) {
-                    //document.getElementById("scrollto").style.display = "block";
-                    console.log(document.documentElement.scrollTop + document.body.scrollTop)
-                    this.$store.dispatch('FECTH_NEWS_LATEST_MORE')
-                }
-                else {
-                    //document.getElementById("scrollto").style.display = "none";
-                    console.log(2)
-                }
             }
         }
 

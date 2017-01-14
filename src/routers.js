@@ -12,17 +12,22 @@ Vue.use(VueRouter)
 const routers = [{
     path: '/',
     component: App
-},{
+}, {
     path: '/description',
-    component :Description
-},{
+    component: Description
+},
+{
+    path: '/app',
+    component: App
+},
+{
     path: '/news-detail/:id',
     name: 'news-detail',
     component: NewsDetail
-},{
+}, {
     path: '/themes',
     component: Themes
-},{
+}, {
     path: '/themes-list/:id',
     name: 'themes-list',
     component: ThemeList

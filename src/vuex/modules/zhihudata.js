@@ -40,6 +40,7 @@ const getters = {
 const mutations = {
     [types.TOGGLE_NEWS_LATEST](state, all) {
         state.NewsListRoot.push(all)
+        state.NewsLatest = all
         state.LoadingTwo = false
     },
     [types.TOGGLE_NEWS_LATEST_MORE](state, all) {
@@ -51,7 +52,7 @@ const mutations = {
         String.prototype.replaceAll = function (s1, s2) {
             return this.replace(new RegExp(s1, "gm"), s2);
         }
-        all.body = all.body.replaceAll('src=\"', 'src=\"http://lovestreet.leanapp.cn/zhihu/resource?url= ')
+        all.body = all.body.replaceAll('src=\"', 'src=\"http://lovestreet.leanapp.cn/zhihu/resource?url=')
         all.body = all.body.replaceAll('<div class=\"img-place-holder\"></div>', '')
         state.NewsDetail = all
         state.LoadingTwo = false

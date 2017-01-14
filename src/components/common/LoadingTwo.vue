@@ -1,6 +1,6 @@
 <template>
-  <div class="loading-two center">
-    <img src="../../../static/zhihu-icon2.png" height="50" class="inline-block double-flash" alt="">
+  <div class="loading-two">
+    <img src="../../../static/zhihu-icon2.png" class="double-flash" alt="">
     <p class="h6">正在加载...</p>
   </div>
 </template>
@@ -18,17 +18,22 @@
 <style scoped>
 .loading-two{
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: white;
   padding-top: 25%;
 }
 .loading-two p {
-  
+  text-align: center;
+
 }
 .double-flash {
   animation: double-flash_5308 3s ease infinite;
-  transform-origin: 50% 50%;
+  
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  /*transform-origin: 50% 50%;*/
 }
 
 @keyframes double-flash_5308 {
