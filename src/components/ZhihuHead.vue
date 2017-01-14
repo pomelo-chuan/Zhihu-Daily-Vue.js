@@ -1,16 +1,16 @@
 <template>
 <div>
 	<div class="zhihu-head">
-		<div class="center m1 h4 bold pt1" style="color: #282828">知乎日报</div>
+		<div class="m1 h3 bold pt1 pl2" style="color: black">知乎日报</div>
 		<div class="row mt2">
 			<div class="col col-4 center">
-				<router-link class="h6" to="/app">日报</router-link>
+				<router-link class="h5" to="/app">日报</router-link>
 			</div>
 			<div class="col col-4 center">
-				<router-link class="h6" to="/themes">专题</router-link>
+				<router-link class="h5" to="/themes">专题</router-link>
 			</div>
 			<div class="col col-4 center">
-				<router-link class="h6" to="/description">关于</router-link>
+				<router-link class="h5" to="/description">关于</router-link>
 			</div>
 		</div>
 	</div>
@@ -44,21 +44,29 @@ export default {
 	/* ===color=== */
 	background-color: white;
 	border-bottom: 2px solid #F5F4F4;
+	box-shadow: 0px 0px 25px #F5F4F4;
+}
+.router-link-active {
+	color: black !important;
+	font-weight: bold;
+	font-size: 1.2rem;
 }
 
 .zhihu-head a {
-	color: #4e5257;
-}
-
-.router-link-active {
-	font-weight: bold;
-	font-size: 1.2rem;
+	color: #333333;
 }
 
 @media screen and (min-width: 640px) {
 	.zhihu-head-icon {
 		width: 25px;
 		height: 25px;
+	}
+	.zhihu-head a {
+		color: #333333;
+	}
+	.zhihu-head a:hover{
+		color: black;
+		transition: color 1s ease;
 	}
 }
 </style>

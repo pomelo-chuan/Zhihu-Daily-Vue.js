@@ -31,7 +31,7 @@ html {
 
 @media screen and (min-width: 640px) {
 	html {
-		font-size: 25px;
+		font-size: 15px;
 	}
 	.root-style {
 		width: 640px;
