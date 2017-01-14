@@ -10,30 +10,28 @@ import ThemeList from './pages/ThemeList'
 Vue.use(VueRouter)
 
 const routers = [{
-    path: '/',
-    component: App
+  path: '/',
+  component: App
 }, {
-    path: '/description',
-    component: Description
-},
-{
-    path: '/app',
-    component: App
-},
-{
-    path: '/news-detail/:id',
-    name: 'news-detail',
-    component: NewsDetail
+  path: '/description',
+  component: Description
 }, {
-    path: '/themes',
-    component: Themes
+  path: '/app',
+  component: App
 }, {
-    path: '/themes-list/:id',
-    name: 'themes-list',
-    component: ThemeList
+  path: '/news-detail/:id',
+  name: 'news-detail',
+  component: NewsDetail
+}, {
+  path: '/themes',
+  component: Themes
+}, {
+  path: '/themes-list/:id',
+  name: 'themes-list',
+  component: ThemeList
 }]
 
 export const router = new VueRouter({
-    routes: routers,
-    hashbang: true
+  routes: routers,
+  hashbang: true
 })
