@@ -1,6 +1,7 @@
 <template>
 <transition name="homeTransition">
 	<div>
+		<ZhihuHeadFix v-show="ZhihuHeadFixIsShow"></ZhihuHeadFix>
 		<LoadingTwo v-show="DONE_LOADING_TWO"></LoadingTwo>
 		<div class="ml2 mt1 mr2">
 			<div v-for="list in DONE_NEWS_LIST_ROOT">
@@ -13,7 +14,10 @@
 			</div>
 			<button v-show="!DONE_LOADING_ONE && !DONE_LOADING_TWO" @click="LoadMoreNews()" class="load-more-button pl2 pr2 pt1 pb1 mb2 mt1">更多</button>
 			<LoadingOne v-show="DONE_LOADING_ONE"></LoadingOne>
-			<button @click="backToTop" v-show="BackToTopIsShow" class="back-to-top p1">Top</button>
+			
+			<button @click="backToTop" v-show="BackToTopIsShow" class="back-to-top p1">
+				<img src="../../static/top.png" alt="" style="width: 1rem; color: none; background-color: white;">
+			</button>
 		</div>
 	</div>
 </transition>
@@ -28,11 +32,13 @@ import LoadingOne from '../components/common/LoadingOne'
 import LoadingTwo from '../components/common/LoadingTwo'
 import BackToTop from '../components/common/BackToTop'
 import TopStory from '../components/common/TopStory'
+import ZhihuHeadFix from '../components/ZhihuHeadFix'
 
 export default {
 	data: function() {
 		return {
-			BackToTopIsShow: false
+			BackToTopIsShow: false,
+			ZhihuHeadFixIsShow: false
 		}
 	},
 	name: 'App',
@@ -41,21 +47,25 @@ export default {
 		LoadingOne,
 		LoadingTwo,
 		BackToTop,
-		TopStory
+		TopStory,
+		ZhihuHeadFix
 	},
 	computed: {
 		...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO', 'DONE_NEWS_LIST_ROOT'])
 	},
 	created: function() {
 		var _this = this
+		// 监听页面已滑动的位置，当页面滑动了400px之后，显示“返回顶部”按钮，跟固定在顶部的导航栏
 		function backToTop(){
 			setInterval(function(){
-				if(window.scrollY>800) {
+				if(window.scrollY>400) {
 					_this.BackToTopIsShow = true
+					_this.ZhihuHeadFixIsShow= true
 				} else {
 					_this.BackToTopIsShow = false
+					_this.ZhihuHeadFixIsShow= false
 				}
-			},1000)
+			},50)
 		}
 		backToTop()
 		if (!!this.DONE_NEWS_LATEST.stories && this.DONE_NEWS_LATEST.stories.length > 0) {} else {
@@ -68,6 +78,7 @@ export default {
 		},
 		backToTop: function() {
 			window.scrollTo(0,0)
+			this.ZhihuHeadFixIsShow= false
 		}
 	}
 }
@@ -110,7 +121,6 @@ export default {
 	color: black;
 	font-size: 0.8rem;
 	border-bottom: 1px solid #efefef;
-	/*box-shadow:0px 0px 20px #dbdada;*/
 	/* ===size and position=== */
 	width: 100%;
 }
@@ -123,9 +133,8 @@ export default {
 	border-bottom-style: none;
 	border-left-style: none;
 	outline: none;
-	/* ===color and font=== */
+	/* ===color=== */
 	background-color: white;
-	color: black;
 	/* ===size and position=== */
 	font-size: 0.8rem;
 	position: fixed;

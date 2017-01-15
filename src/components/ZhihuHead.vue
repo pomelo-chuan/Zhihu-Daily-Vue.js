@@ -14,7 +14,7 @@
 			</div>
 		</div>
 	</div>
-	<!--<div style="height: 5rem"></div>-->
+	
 </div>
 </template>
 
@@ -51,6 +51,8 @@ export default {
 .zhihu-head a {
 	color: #333333;
 }
+
+
 
 @media screen and (min-width: 640px) {
 	.zhihu-head-icon {

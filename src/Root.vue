@@ -1,6 +1,6 @@
 <template>
 <div>
-	<ZhihuHead></ZhihuHead>
+	<ZhihuHead ZhihuHeadFixIsShow="false" ></ZhihuHead>
 	<div class="root-style">
 		<router-view></router-view>
 	</div>
