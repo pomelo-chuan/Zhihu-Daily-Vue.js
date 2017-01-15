@@ -30,14 +30,14 @@ export default {
 	height: 2rem;
 	background-color: white;
     opacity: 1;
-    animation: zhihuheadfixfadein 1s ease 1;
+    animation: ZHihuheadFixFadeIn 1s ease 1;
 }
 
 .zhihu-head-fixed a{
 	color: #333333;
 }
 
-@keyframes zhihuheadfixfadein {
+@keyframes ZHihuheadFixFadeIn {
     from{opacity: 0}
     to{opacity: 1}
 }

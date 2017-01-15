@@ -1,8 +1,11 @@
 <template>
 <transition name="homeTransition">
 	<div>
+		<!-- ===the navigation bar fixed in the top, when the page rolling after to 400px=== -->
 		<ZhihuHeadFix v-show="ZhihuHeadFixIsShow"></ZhihuHeadFix>
+		<!-- ===show the loading page when load the news data=== -->
 		<LoadingTwo v-show="DONE_LOADING_TWO"></LoadingTwo>
+		<!-- ===the news list=== -->
 		<div class="ml2 mt1 mr2">
 			<div v-for="list in DONE_NEWS_LIST_ROOT">
 				<p class="news-lastet-time m2 bold">{{list.date | formatDate}}</p>
@@ -12,9 +15,11 @@
 					</router-link>
 				</div>
 			</div>
+			<!-- ===click the button to load more news== -->
 			<button v-show="!DONE_LOADING_ONE && !DONE_LOADING_TWO" @click="LoadMoreNews()" class="load-more-button pl2 pr2 pt1 pb1 mb2 mt1">更多</button>
+			<!-- ===the loading when news list loading=== -->
 			<LoadingOne v-show="DONE_LOADING_ONE"></LoadingOne>
-			
+			<!-- ===back to top button=== -->
 			<button @click="backToTop" v-show="BackToTopIsShow" class="back-to-top p1">
 				<img src="../../static/top.png" alt="" style="width: 1rem; color: none; background-color: white;">
 			</button>
