@@ -13,6 +13,7 @@
 			</div>
 			<button v-show="!DONE_LOADING_ONE && !DONE_LOADING_TWO" @click="LoadMoreNews()" class="load-more-button pl2 pr2 pt1 pb1 mb2 mt1">更多</button>
 			<LoadingOne v-show="DONE_LOADING_ONE"></LoadingOne>
+			<button @click="backToTop" v-show="BackToTopIsShow" class="back-to-top p1">Top</button>
 		</div>
 	</div>
 </transition>
@@ -29,6 +30,11 @@ import BackToTop from '../components/common/BackToTop'
 import TopStory from '../components/common/TopStory'
 
 export default {
+	data: function() {
+		return {
+			BackToTopIsShow: false
+		}
+	},
 	name: 'App',
 	components: {
 		ZHihuListCover,
@@ -40,8 +46,18 @@ export default {
 	computed: {
 		...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO', 'DONE_NEWS_LIST_ROOT'])
 	},
-
 	created: function() {
+		var _this = this
+		function backToTop(){
+			setInterval(function(){
+				if(window.scrollY>800) {
+					_this.BackToTopIsShow = true
+				} else {
+					_this.BackToTopIsShow = false
+				}
+			},1000)
+		}
+		backToTop()
 		if (!!this.DONE_NEWS_LATEST.stories && this.DONE_NEWS_LATEST.stories.length > 0) {} else {
 			this.$store.dispatch('FECTH_NEWS_LATEST')
 		}
@@ -49,6 +65,9 @@ export default {
 	methods: {
 		LoadMoreNews: function() {
 			this.$store.dispatch('FECTH_NEWS_LATEST_MORE')
+		},
+		backToTop: function() {
+			window.scrollTo(0,0)
 		}
 	}
 }
@@ -96,27 +115,23 @@ export default {
 	width: 100%;
 }
 
-
-/* ===the style of back to top=== */
-
-.back-to--button {
+/* ===back to top=== */
+.back-to-top{
 	/* ===style format=== */
 	border-top-style: none;
 	border-right-style: none;
 	border-bottom-style: none;
 	border-left-style: none;
 	outline: none;
-	/* ===color=== */
-	color: white;
-	font-size: 0.8rem;
-	opacity: 0.7;
+	/* ===color and font=== */
+	background-color: white;
+	color: black;
 	/* ===size and position=== */
+	font-size: 0.8rem;
 	position: fixed;
 	right: 1rem;
-	bottom: 0rem;
-	display: none;
+	bottom: 1rem;
 }
-
 
 /* ==过度动画== */
 

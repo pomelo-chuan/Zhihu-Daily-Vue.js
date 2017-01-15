@@ -1,7 +1,7 @@
 <template>
 <div>
 	<div class="zhihu-head">
-		<div class="m1 h3 bold pt1 pl2" style="color: black">知乎日报</div>
+		<div class="m1 h4 bold pt1 pl2" style="color: black">知乎日报</div>
 		<div class="row mt2">
 			<div class="col col-4 center">
 				<router-link class="h5" to="/app">日报</router-link>
@@ -14,7 +14,7 @@
 			</div>
 		</div>
 	</div>
-	<div style="height: 5rem"></div>
+	<!--<div style="height: 5rem"></div>-->
 </div>
 </template>
 
@@ -36,15 +36,11 @@ export default {
 <style>
 .zhihu-head {
 	/* ===position and size=== */
-	position: fixed;
-	z-index: 999;
-	top: 0;
 	width: 100%;
-	height: 5rem;
+	height: 4.5rem;
 	/* ===color=== */
 	background-color: white;
 	border-bottom: 2px solid #F5F4F4;
-	box-shadow: 0px 0px 25px #F5F4F4;
 }
 .router-link-active {
 	color: black !important;
