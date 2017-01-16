@@ -37,6 +37,7 @@ export default {
 		...mapGetters(['DONE_THEMES', 'DONE_LOADING_TWO'])
 	},
 	created: function() {
+		window.scrollTo(0,0)
 		this.$store.dispatch('FETCH_THEMES')
 	}
 }

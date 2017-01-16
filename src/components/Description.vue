@@ -17,6 +17,9 @@ export default {
 	name: 'Description',
 	components: {
 
+	},
+	created: function () {
+		window.scrollTo(0,0)
 	}
 }
 </script>

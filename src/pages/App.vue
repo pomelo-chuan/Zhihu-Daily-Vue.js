@@ -70,7 +70,7 @@ export default {
 					_this.BackToTopIsShow = false
 					_this.ZhihuHeadFixIsShow= false
 				}
-			},50)
+			},500)
 		}
 		backToTop()
 		if (!!this.DONE_NEWS_LATEST.stories && this.DONE_NEWS_LATEST.stories.length > 0) {} else {

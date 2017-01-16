@@ -40,6 +40,7 @@ export default {
 	},
 	created: function() {
 		this.$store.dispatch('FETCH_THEMES_list', this.$route.params.id)
+		window.scrollTo(0, 0)
 	}
 }
 </script>
