@@ -93,6 +93,8 @@ export default {
 /* ===the style of the news list style=== */
 
 .news-lastet-time {
+	width:  100%;
+	overflow: hidden;
 	font-size: 0.8rem;
 	border-left: 5px solid #efefef;
 	color: grey;
