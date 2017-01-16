@@ -5,7 +5,7 @@
 ## 声明：
 本项目中所用的api来自知乎( [知乎Zhihu](http://www.zhihu.com/) )， 项目中所有内容的一切权利属于知乎，本项目所有内容及代码仅供私下学习参考，不得作为其他用途。
 
-## 在线预览／live demo：
+## 在线预览/live demo：
 在线预览：[live demo](http://lovestreet.leanapp.cn/zhihu/#/)
 
 ## 技术：
@@ -28,7 +28,7 @@
 4. Backend use the Node.js
  
 
-## 运行方法／install dependencies
+## 运行方法/install dependencies
 
 ``` bash
 npm install
