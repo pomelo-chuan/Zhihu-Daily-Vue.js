@@ -63,12 +63,12 @@ computed: {
 </div>
 ```
 
-4. mutations与actions：
-a、mutations是用来处理同步的事情的，比如给state中的变量赋值；
+## mutations与actions：
+1. mutations是用来处理同步的事情的，比如给state中的变量赋值；
 
-b、actions是用来处理异步的事情，比如网络请求；
+1. actions是用来处理异步的事情，比如网络请求；
 
-c、但是actions也是可以做同步的事情的，但最好按照vuex的建议来做：在mutations中处理同步操作
+1. 但是actions也是可以做同步的事情的，但最好按照vuex的建议来做：在mutations中处理同步操作
 
 
 ## Technology:
