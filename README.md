@@ -64,7 +64,6 @@ computed: {
 ```
 
 4. mutations与actions：
-
 a、mutations是用来处理同步的事情的，比如给state中的变量赋值；
 
 b、actions是用来处理异步的事情，比如网络请求；
@@ -74,13 +73,13 @@ c、但是actions也是可以做同步的事情的，但最好按照vuex的建�
 
 ## Technology:
 
-    1. The project structure by vue-cli and company with the [vue](https://github.com/vuejs/vue)、[vuex](https://github.com/vuejs/vuex)、[vue-router](https://github.com/vuejs/vue-router)
+1. The project structure by vue-cli and company with the [vue](https://github.com/vuejs/vue)、[vuex](https://github.com/vuejs/vuex)、[vue-router](https://github.com/vuejs/vue-router)
 
-    2. The basis stylesheet use the [basscss](https://github.com/basscss/basscss)
+2. The basis stylesheet use the [basscss](https://github.com/basscss/basscss)
 
-    3. HTTP use the [axios](https://github.com/mzabriskie/axios)
+3. HTTP use the [axios](https://github.com/mzabriskie/axios)
  
-    4. Backend use the Node.js
+4. Backend use the Node.js
  
 
 ## 运行方法/install dependencies
