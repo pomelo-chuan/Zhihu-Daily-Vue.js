@@ -40,8 +40,8 @@ export const FECTH_NEWS_LATEST = 'FECTH_NEWS_LATEST'                // 最新消
 export const TOGGLE_NEWS_LATEST = 'TOGGLE_NEWS_LATEST'              // 最新消息列表
 //  getters types
 export const DONE_NEWS_LIST_ROOT = 'DONE_NEWS_LIST_ROOT'            // 最新消息列表梗
+// 命名具有意义，并且写好注释。
 ```
-命名具有意义，并且写好注释。
 
 2. store分模块
 其实不用分模块，但还是分一下吧，为后续开发着想。
