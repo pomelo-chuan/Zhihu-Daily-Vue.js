@@ -8,6 +8,20 @@
 ## 在线预览/live demo：
 在线预览：[live demo](http://lovestreet.leanapp.cn/zhihu/#/)
 
+## 设计：
+1.设计上没有按照知乎日报客户端的交互及UI设计来做，本渣亲自捏了一个，颜色以黑白灰为主，本来想加入知乎的蓝色，但是本渣设计功力实在太差，故舍弃掉了蓝色，只采用黑白灰三色。
+
+2.日报条目采用无边界设计，只添加淡灰色的分割线来区分。
+
+3.整个网页是一个单页应用(Single Page Web App)，所有的数据使用vuex来进行管理，在store里统一管理。
+
+## 预览：
+![日报列表](http://upload-images.jianshu.io/upload_images/3261015-5fed39fa95e6a680.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![日报专题](http://upload-images.jianshu.io/upload_images/3261015-7cc80745e558f778.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![列表详情](http://upload-images.jianshu.io/upload_images/3261015-af689615eee201e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ## 技术：
 1. 该项目使用[vue-cli](https://github.com/vuejs/vue-cli)构建、打包，配合vue全家桶（[vue](https://github.com/vuejs/vue)、[vuex](https://github.com/vuejs/vuex)、[vue-router](https://github.com/vuejs/vue-router)）进行编码、开发
 
@@ -16,6 +30,45 @@
 3. 网络请求使用[axios](https://github.com/mzabriskie/axios)
 
 4. 后台使用Node.js
+
+## [vuex架构](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/src/vuex/modules/zhihudata.js)：
+1. 将getters、mutations、actions变量名设定一个命名空间，否则store写的大了，命名肯定会乱，示例：
+```
+// actions types
+export const FECTH_NEWS_LATEST = 'FECTH_NEWS_LATEST'                // 最新消息列表
+// mutstions types
+export const TOGGLE_NEWS_LATEST = 'TOGGLE_NEWS_LATEST'              // 最新消息列表
+//  getters types
+export const DONE_NEWS_LIST_ROOT = 'DONE_NEWS_LIST_ROOT'            // 最新消息列表梗
+```
+命名具有意义，并且写好注释。
+
+2. store分模块
+其实不用分模块，但还是分一下吧，为后续开发着想。
+
+3. 使用getters将状态（state）、数据（data）发往页面模版（template）上，发数据有两三种方式，根据自己习惯来吧，我是这样做的：
+```
+[types.DONE_NEWS_LIST_ROOT]: state => {
+        return state.NewsListRoot
+    }
+```
+```
+computed: {
+		...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO', 'DONE_NEWS_LIST_ROOT'])
+	}
+```
+```
+<div v-for="list in DONE_NEWS_LIST_ROOT">
+		<!-- ===使用v-for来循环渲染数据=== -->
+</div>
+```
+
+4. mutations与actions：
+
+a、mutations是用来处理同步的事情的，比如给state中的变量赋值；
+b、actions是用来处理异步的事情，比如网络请求；
+c、但是actions也是可以做同步的事情的，但最好按照vuex的建议来做：在mutations中处理同步操作
+
 
 ## Technology:
 
