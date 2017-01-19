@@ -16,11 +16,8 @@
 3.整个网页是一个单页应用(Single Page Web App)，所有的数据使用vuex来进行管理，在store里统一管理。
 
 ## 预览：
-![日报列表](http://upload-images.jianshu.io/upload_images/3261015-5fed39fa95e6a680.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![日报列表](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/static/demo.jpg)
 
-![日报专题](http://upload-images.jianshu.io/upload_images/3261015-7cc80745e558f778.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![列表详情](http://upload-images.jianshu.io/upload_images/3261015-af689615eee201e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 技术：
 1. 该项目使用[vue-cli](https://github.com/vuejs/vue-cli)构建、打包，配合vue全家桶（[vue](https://github.com/vuejs/vue)、[vuex](https://github.com/vuejs/vuex)、[vue-router](https://github.com/vuejs/vue-router)）进行编码、开发
@@ -32,7 +29,7 @@
 4. 后台使用Node.js
 
 ## [vuex架构](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/src/vuex/modules/zhihudata.js)：
-1. 将getters、mutations、actions变量名设定一个命名空间，否则store写的大了，命名肯定会乱，示例：(示例代码)[https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/src/vuex/zhihu-types.js]
+1. 将getters、mutations、actions变量名设定一个命名空间，否则store写的大了，命名肯定会乱，示例：[示例代码](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/src/vuex/zhihu-types.js)
 
 2. store分模块
 其实不用分模块，但还是分一下吧，为后续开发着想。
