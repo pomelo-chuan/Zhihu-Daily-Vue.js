@@ -88,7 +88,7 @@ export default {
 		},
 		backToTop: function() {
 			window.scrollTo(0,0)
-			this.ZhihuHeadFixIsShow= false
+			this.ZhihuHeadFixClass= 'ZhihuHeadFixClass-none'
 		}
 	}
 }
