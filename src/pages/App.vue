@@ -2,7 +2,9 @@
 <transition name="homeTransition">
 	<div>
 		<!-- ===the navigation bar fixed in the top, when the page rolling after to 400px=== -->
-		<ZhihuHeadFix v-show="ZhihuHeadFixIsShow"></ZhihuHeadFix>
+		<div :class="ZhihuHeadFixClass">
+			<ZhihuHeadFix></ZhihuHeadFix>
+		</div>
 		<!-- ===show the loading page when load the news data=== -->
 		<LoadingTwo v-show="DONE_LOADING_TWO"></LoadingTwo>
 		<!-- ===the news list=== -->
@@ -45,7 +47,7 @@ export default {
 	data: function() {
 		return {
 			BackToTopIsShow: false,
-			ZhihuHeadFixIsShow: false
+			ZhihuHeadFixClass: 'ZhihuHeadFixClass-none'
 		}
 	},
 	name: 'App',
@@ -68,10 +70,10 @@ export default {
 			setInterval(function(){
 				if(window.scrollY>400) {
 					_this.BackToTopIsShow = true
-					_this.ZhihuHeadFixIsShow= true
+					_this.ZhihuHeadFixClass= 'ZhihuHeadFixClass-on'
 				} else {
 					_this.BackToTopIsShow = false
-					_this.ZhihuHeadFixIsShow= false
+					_this.ZhihuHeadFixClass= 'ZhihuHeadFixClass-none'
 				}
 			},500)
 		}
@@ -151,6 +153,21 @@ export default {
 	position: fixed;
 	right: 1rem;
 	bottom: 1rem;
+}
+
+/* ===the transition style of template: ZhihuHeadFix=== */
+
+.ZhihuHeadFixClass-none {
+	width: 100%;
+	position: fixed;
+	top: -2rem;
+	transition: all 0.5s ease;
+}
+.ZhihuHeadFixClass-on {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: all 0.5s ease;
 }
 
 /* ==过度动画== */

@@ -24,21 +24,18 @@ export default {
 
 <style>
 .zhihu-head-fixed{
-	position: fixed;
-	width: 100%;
-	top: 0;
 	height: 2rem;
 	background-color: white;
     opacity: 1;
-    animation: ZHihuheadFixFadeIn 1s ease 1;
 }
 
 .zhihu-head-fixed a{
 	color: #333333;
 }
 
-@keyframes ZHihuheadFixFadeIn {
-    from{opacity: 0}
-    to{opacity: 1}
+@keyframes ZhihuHeadFixeFlow {
+	from{top: -2rem}
+	to{top: 0}
 }
+
 </style>
