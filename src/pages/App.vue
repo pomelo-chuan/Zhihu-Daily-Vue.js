@@ -1,6 +1,7 @@
 <template>
 <transition name="homeTransition">
 	<div>
+		<TopNews></TopNews>
 		<!-- ===the navigation bar fixed in the top, when the page rolling after to 400px=== -->
 		<ZhihuHeadFix v-show="ZhihuHeadFixIsShow"></ZhihuHeadFix>
 		<!-- ===show the loading page when load the news data=== -->
@@ -8,7 +9,7 @@
 		<!-- ===the news list=== -->
 		<div class="ml2 mt1 mr2">
 			<div v-for="list in DONE_NEWS_LIST_ROOT">
-				<p class="news-lastet-time m2 bold">{{list.date | formatDate}}</p>
+				<p class="news-lastet-time bold">{{list.date | formatDate}}</p>
 				<div v-for="item in list.stories">
 					<router-link :to="{name: 'news-detail', params: {id: item.id}}" style="color: black">
 						<ZHihuListCover :title="item.title" :images="item.images[0]"></ZHihuListCover>
@@ -38,6 +39,7 @@ import LoadingTwo from '../components/common/LoadingTwo'
 import BackToTop from '../components/common/BackToTop'
 import TopStory from '../components/common/TopStory'
 import ZhihuHeadFix from '../components/ZhihuHeadFix'
+import TopNews from '../components/list/TopNews'
 
 export default {
 	data: function() {
@@ -53,7 +55,8 @@ export default {
 		LoadingTwo,
 		BackToTop,
 		TopStory,
-		ZhihuHeadFix
+		ZhihuHeadFix,
+		TopNews
 	},
 	computed: {
 		...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO', 'DONE_NEWS_LIST_ROOT'])
@@ -94,7 +97,6 @@ export default {
 
 .news-lastet-time {
 	width:  100%;
-	overflow: hidden;
 	font-size: 0.8rem;
 	border-left: 5px solid #efefef;
 	color: grey;
@@ -102,14 +104,17 @@ export default {
 	text-indent: 0.5rem;
 	animation: newsLastetTime 0.5s ease 1;
 	transform: translateX(0px);
+	opacity: 1;
 }
 
 @keyframes newsLastetTime {
 	from {
-		transform: translateX(100px)
+		transform: translateX(100px);
+		opacity: 0;
 	}
 	to {
-		transform: translateX(0px)
+		transform: translateX(0px);
+		opacity: 1;
 	}
 }
 
