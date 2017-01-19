@@ -37,7 +37,7 @@ export default {
 
 .theme-head-name p:nth-child(2) {
 	font-size: 0.5rem;
-	border-left: 4px solid grey;
+	border-left: 5px solid #efefef;
 	margin: 0.5rem 2rem;
 	padding: 0.2rem;
 }
