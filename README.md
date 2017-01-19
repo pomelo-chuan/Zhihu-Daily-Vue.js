@@ -32,22 +32,14 @@
 4. 后台使用Node.js
 
 ## [vuex架构](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/src/vuex/modules/zhihudata.js)：
-1. 将getters、mutations、actions变量名设定一个命名空间，否则store写的大了，命名肯定会乱，示例：
-```
-// actions types
-export const FECTH_NEWS_LATEST = 'FECTH_NEWS_LATEST'                // 最新消息列表
-// mutstions types
-export const TOGGLE_NEWS_LATEST = 'TOGGLE_NEWS_LATEST'              // 最新消息列表
-//  getters types
-export const DONE_NEWS_LIST_ROOT = 'DONE_NEWS_LIST_ROOT'            // 最新消息列表梗
-// 命名具有意义，并且写好注释。
-```
+1. 将getters、mutations、actions变量名设定一个命名空间，否则store写的大了，命名肯定会乱，示例：(示例代码)[https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/src/vuex/zhihu-types.js]
 
 2. store分模块
 其实不用分模块，但还是分一下吧，为后续开发着想。
 
 3. 使用getters将状态（state）、数据（data）发往页面模版（template）上，发数据有两三种方式，根据自己习惯来吧，我是这样做的：
 ```
+//  getters
 [types.DONE_NEWS_LIST_ROOT]: state => {
         return state.NewsListRoot
     }
