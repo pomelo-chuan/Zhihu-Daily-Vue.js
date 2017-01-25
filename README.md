@@ -42,11 +42,13 @@
     }
 ```
 ```
+// javascript
 computed: {
 		...mapGetters(['DONE_NEWS_LATEST', 'DONE_LOADING_ONE', 'DONE_LOADING_TWO', 'DONE_NEWS_LIST_ROOT'])
 	}
 ```
 ```
+// template
 <div v-for="list in DONE_NEWS_LIST_ROOT">
 		<!-- ===使用v-for来循环渲染数据=== -->
 </div>
