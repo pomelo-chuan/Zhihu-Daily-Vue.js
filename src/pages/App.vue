@@ -32,9 +32,7 @@
 </template>
 
 <script>
-import {
-	mapGetters
-} from 'vuex'
+import { mapGetters } from 'vuex'
 import ZHihuListCover from '../components/List/ZHihuListCover'
 import LoadingOne from '../components/common/LoadingOne'
 import LoadingTwo from '../components/common/LoadingTwo'

@@ -1,5 +1,5 @@
 <template>
-  <div class="top-news m2">
+  <div v-if="!!TopNewsData" class="top-news m2">
    <p class="top-news-title ml2 bold">今日要闻：</p>
    <div v-for="item in TopNewsData">
       <router-link :to="{name: 'news-detail', params: {id: item.id}}" style="color: black">
