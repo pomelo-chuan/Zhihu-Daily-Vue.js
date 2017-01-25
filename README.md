@@ -16,7 +16,7 @@
 3.整个网页是一个单页应用(Single Page Web App)，所有的数据使用vuex来进行管理，在store里统一管理。
 
 ## 预览：
-![日报列表](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/static/demo.jpg)
+![日报列表](https://github.com/pomelo-chuan/Zhihu-Daily-Vue.js/blob/master/static/demo-pic.jpg)
 
 
 ## 技术：
