@@ -46,10 +46,12 @@ export default {
 	color: black !important;
 	font-weight: bold;
 	font-size: 1.2rem;
+	outline: none;
 }
 
 .zhihu-head a {
 	color: #333333;
+	outline: none;
 }
 
 
@@ -61,6 +63,7 @@ export default {
 	}
 	.zhihu-head a {
 		color: #333333;
+		outline: none !important;
 	}
 	.zhihu-head a:hover{
 		color: black;

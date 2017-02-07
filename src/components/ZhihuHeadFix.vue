@@ -38,4 +38,9 @@ export default {
 	to{top: 0}
 }
 
+@media screen and (min-width: 640px) {
+	.zhihu-head-fixed {
+		display: none;
+	}
+}
 </style>
