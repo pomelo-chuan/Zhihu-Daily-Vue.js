@@ -41,7 +41,7 @@ const mutations = {
     [types.TOGGLE_NEWS_LATEST](state, all) {
         state.NewsListRoot.push(all)
         state.NewsLatest = all
-        state.LoadingTwo = false
+        // state.LoadingTwo = false
     },
     [types.TOGGLE_NEWS_LATEST_MORE](state, all) {
         state.NewsListRoot.push(all)
@@ -64,6 +64,12 @@ const mutations = {
     [types.TOGGLE_THEMES_LIST](state, all) {
         state.ThemesList = all
         state.LoadingTwo = false
+    },
+    showLoding(state) {
+        state.LoadingTwo = true;
+    },
+    hideLoading(state) {
+        state.LoadingTwo = false;
     }
 }
 
@@ -71,9 +77,11 @@ const actions = {
     // 获取首页消息列表
     [types.FECTH_NEWS_LATEST]({commit}) {
         state.LoadingTwo = true
+        commit('showLoding');
         axios.get('http://lovestreet.leanapp.cn/zhihu/news/latest')
             .then(res => {
-                commit(types.TOGGLE_NEWS_LATEST, res.data)
+                commit(types.TOGGLE_NEWS_LATEST, res.data);
+                commit('hideLoading');
             }).catch(err => console.log(err))
     },
     // 首页下方按钮点击加载更多消息
