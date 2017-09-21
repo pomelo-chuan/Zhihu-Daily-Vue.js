@@ -1,6 +1,7 @@
 import * as types from '../zhihu-types.js'
 import axios from 'axios'
 var moment = require('moment');
+const urlBase = '/api/';
 
 const state = {
     NewsListRoot: [],
@@ -78,7 +79,7 @@ const actions = {
     [types.FECTH_NEWS_LATEST]({commit}) {
         state.LoadingTwo = true
         commit('showLoding');
-        axios.get('http://lovestreet.leanapp.cn/zhihu/news/latest')
+        axios.get(urlBase + 'news/latest')
             .then(res => {
                 commit(types.TOGGLE_NEWS_LATEST, res.data);
                 commit('hideLoading');
@@ -88,7 +89,7 @@ const actions = {
     [types.FECTH_NEWS_LATEST_MORE]({commit}) {
         state.LoadingOne = true
         var now = state.time.format("YYYYMMDD")
-        axios.get('http://lovestreet.leanapp.cn/zhihu/before/' + now)
+        axios.get(urlBase + 'before/' + now)
             .then(res => {
                 commit(types.TOGGLE_NEWS_LATEST_MORE, res.data)
             }).catch(err => console.log(err))
@@ -96,7 +97,7 @@ const actions = {
     // 获取信息详情
     [types.FETCH_NEWS_DETAIL]({commit}, id) {
         state.LoadingTwo = true
-        axios.get('http://lovestreet.leanapp.cn/zhihu/news/' + id)
+        axios.get(urlBase + 'news/' + id)
             .then(res => {
                 commit(types.TOGGLE_NEWS_DETAIL, res.data)
             }).catch(err => console.log(err))
@@ -104,7 +105,7 @@ const actions = {
     // 获取日报主题
     [types.FETCH_THEMES]({commit}) {
         state.LoadingTwo = true
-        axios.get('http://lovestreet.leanapp.cn/zhihu/themes')
+        axios.get(urlBase + 'themes')
             .then(res => {
                 commit(types.TOGGLE_THEMES, res.data)
             }).catch(err => console.log(err))
@@ -112,7 +113,7 @@ const actions = {
     // 获取主题条目列表
     [types.FETCH_THEMES_list]({commit}, id) {
         state.LoadingTwo = true
-        axios.get('http://lovestreet.leanapp.cn/zhihu/themes/' + id)
+        axios.get(urlBase + 'themes/' + id)
             .then(res => {
                 commit(types.TOGGLE_THEMES_LIST, res.data)
             }).catch(err => console.log(err))

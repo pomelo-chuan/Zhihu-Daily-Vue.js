@@ -5,9 +5,6 @@
 ## 声明：
 本项目中所用的api来自知乎( [知乎Zhihu](http://www.zhihu.com/) )， 项目中所有内容的一切权利属于知乎，本项目所有内容及代码仅供私下学习参考，不得作为其他用途。
 
-## 在线预览/live demo：
-在线预览：[live demo](http://lovestreet.leanapp.cn/zhihu/#/)
-
 ## 设计：
 1.设计上没有按照知乎日报客户端的交互及UI设计来做，本渣亲自捏了一个，颜色以黑白灰为主，本来想加入知乎的蓝色，但是本渣设计功力实在太差，故舍弃掉了蓝色，只采用黑白灰三色。
 
@@ -69,9 +66,9 @@ computed: {
 2. The basis stylesheet use the [basscss](https://github.com/basscss/basscss)
 
 3. HTTP use the [axios](https://github.com/mzabriskie/axios)
- 
+
 4. Backend use the Node.js
- 
+
 
 ## 运行方法/install dependencies
 
